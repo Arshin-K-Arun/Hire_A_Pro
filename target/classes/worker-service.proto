@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+
+option java_multiple_files = true;
+option java_package = "com.hireapro.worker";
+
+message WorkerRequest{
+  string worker_id = 1;
+}
+message WorkerResponse {
+  string worker_id = 1;
+  string name = 2;
+}
+
+service WorkerService {
+  rpc getWorker(WorkerRequest) returns (WorkerResponse) {};
+}
